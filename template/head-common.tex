@@ -1,0 +1,132 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% SPACE SAVERS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[small,compact]{titlesec}
+%%% left, before, after
+%\titlespacing*{\section}{0pt}{3pt}{0pt}
+%\titlespacing*{\subsection}{0pt}{2pt}{0pt}
+\textfloatsep 0.08in
+\floatsep 0.06in
+%%% PATCH TO FIX NUMBERING (titlesec bug removes numbering)
+% https://tex.stackexchange.com/questions/299969/titlesec-loss-of-section-numbering-with-the-new-update-2016-03-15
+%\usepackage{etoolbox}
+%\makeatletter
+%\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
+%\patchcmd{\ttlh@hang}{\noindent}{}{}{}
+%\makeatother
+%%% AMSMATH (align*) SPACING
+%\expandafter\def\expandafter\normalsize\expandafter{%
+%  \normalsize
+%  \setlength\abovedisplayskip{1pt}
+%  \setlength\belowdisplayskip{1pt}
+%  \setlength\abovedisplayshortskip{1pt}
+%  \setlength\belowdisplayshortskip{1pt}
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% PACKAGES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{calrsfs}
+\usepackage{pifont}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+    %pdftitle={Blocking-Resistant Network Services using \systemname},
+    %pdfsubject={Network security and privacy; Peer-to-peer, overlay, and content distribution networks},
+}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{sidecap}
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage{enumitem}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{multirow}
+\usepackage{xspace}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% SETTINGS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstset{
+  %language=HTML,
+  %basicstyle=\scriptsize\ttfamily,       % the size of the fonts that are used for the code
+  basicstyle=\footnotesize\ttfamily,       % the size of the fonts that are used for the code
+  %numbers=left,                   % where to put the line-numbers
+  numbers=none,                   % where to put the line-numbers
+  numberstyle=\scriptsize,        % the size of the fonts that are used for the line-numbers
+  stepnumber=1,                   % the step between two line-numbers. If it is 1 each line will be numbered
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  frame=none,                     % adds a frame around the code
+  tabsize=2,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  escapeinside={\%*}{*)},         % if you want to add a comment within your code
+  commentstyle=\color{green},
+  keywordstyle=\color{blue}\bfseries,
+  stringstyle=\color{red}
+}
+\lstdefinelanguage{javascript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{black}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% CUSTOM COMMANDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\squishlist}{\begin{itemize}[itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt,leftmargin=1em,labelwidth=1em,labelsep=0.5em]}
+\newcommand{\squishlistend}{\end{itemize}}
+\newcommand{\squishend}{\end{itemize}}
+\newcommand{\squishenum}{\begin{enumerate}[itemsep=0.5pt,parsep=0pt,topsep=0pt,partopsep=0pt,leftmargin=1.5em,labelwidth=1em,labelsep=0.5em]{}}
+\newcommand{\squishenumend}{\end{enumerate}}
+
+\newcommand{\todo}[1]{[[[{\bf{TODO: #1}}]]]}
+\newcommand\myurl[2]{\url{#1}}
+
+\renewcommand{\floatpagefraction}{0.95}
+
+\newcommand{\captionfonts}{\small}
+\makeatletter  % Allow the use of @ in command names
+\long\def\@makecaption#1#2{%
+  \vskip 0.1in
+  \sbox\@tempboxa{{\captionfonts #1: #2}}%
+  \ifdim \wd\@tempboxa >\hsize
+    {\captionfonts #1: #2\par}
+  \else
+    \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip 0in}
+\makeatother   % Cancel the effect of \makeatletter
+
+% Theorems
+\newtheorem{mydefinition}{Definition}
+\newtheorem{mytheorem}{Theorem}

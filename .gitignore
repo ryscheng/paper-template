@@ -1,0 +1,17 @@
+# LaTeX
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.lof
+*.toc
+*.texshop
+
+# MacOS
+.DS_Store
+*~
+
+# Output
+paper.pdf
+thesis.pdf

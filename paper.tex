@@ -1,0 +1,60 @@
+\def \systemnameRaw {SYSTEMNAME}
+\def \systemname {\systemnameRaw\xspace}
+
+%\input{template/head-ieee}
+%\input{template/head-acm}
+\input{template/head-usenix}
+%\input{template/head-plain}
+
+\input{template/head-common}
+
+\begin{document}
+
+%\date{}
+%make title bold and 14 pt font (Latex default is non-bold, 16 pt)
+\title{\Large \bf \systemname{}: Awesome Jawesome System}
+
+%\input{template/author-ieee}
+%\input{template/author-acm}
+\input{template/author-usenix}
+
+\maketitle
+
+% Use the following at camera-ready time to suppress page numbers.
+% Comment it out when you first submit the paper for review.
+%\thispagestyle{empty}
+
+\input{sections/abstract}
+\input{sections/introduction}
+\input{sections/background}
+\input{sections/design}
+\input{sections/implementation}
+\input{sections/evaluation}
+\input{sections/discussion}
+\input{sections/related}
+\input{sections/conclusion}
+%\section*{Acknowledgments}
+
+\clearpage
+\renewcommand{\baselinestretch}{1.0}
+% Use the following at camera-ready time to suppress page numbers.
+% Comment it out when you first submit the paper for review.
+%\thispagestyle{empty}
+
+%%% IEEE Bibliography Style
+%\bibliographystyle{abbrv}
+%\bibliography{paper}
+
+%%% ACM Bibliography Style
+%\bibliographystyle{template/ACM-Reference-Format}
+%\bibliography{paper}
+
+%%% USENIX Bibliography Style
+{\footnotesize \bibliographystyle{acm}
+\bibliography{paper}}
+\theendnotes
+
+\appendix
+\input{sections/appendix}
+
+\end{document} 
