@@ -1,24 +1,31 @@
 title = paper
-latex  = pdflatex
+latex = pdflatex
+bibtex = bibtex
+htlatex = htlatex
 papers = $(title).tex
 
-export TEXINPUTS:=.:./template:${TEXINPUTS}
+export TEXINPUTS:=.:./style:${TEXINPUTS}
 
-all: pdf
+all:
+	./latexmk.pl -bibtex -pdf $(papers)
 
-pdf : 
-	$(latex) $(papers)
-	bibtex $(title) 
-	$(latex) $(papers)
+complete: once bib
 	$(latex) $(papers)
 
-once:
+pdf:
 	$(latex) $(papers)
+
+bib:
+	$(bibtex) $(title)
+
+html:
+	$(htlatex) $(papers)
+
+gitclean:
+	git clean -xdf
 
 clean:
-	rm *.aux
-	rm *.bbl
-	rm *.blg
-	rm *.log
-	rm *.out
-	rm paper.pdf
+	./latexmk.pl -c
+
+serve:
+	python -m SimpleHTTPServer

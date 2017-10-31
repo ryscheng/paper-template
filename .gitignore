@@ -7,6 +7,8 @@
 *.lof
 *.toc
 *.texshop
+*.fdb_latexmk
+*.fls
 
 # MacOS
 .DS_Store
