@@ -16,6 +16,7 @@ This repo stores a LaTeX template for conference publications. The template is c
 Your system will need to be configured with the following programs:
 - `pdflatex` - for compiling LaTeX to PDF
 - `bibtex` - for compiling a bibliography
+- `latexmk` - for incremental compilation of LaTeX
 - `htlatex` - for compiling LaTeX to HTML (see 
 - `chktex` - linting your .tex files
 
@@ -116,7 +117,7 @@ $ aspell -c <filename>
 
 ### Microsoft Word
 
-As much as we all hate to admit it, MS Word is still the best grammar and spellchecker out there. To open your publication in MS Word, first compile it to HTML
+Like it or not, MS Word is probably still the best grammar and spellchecker out there. To open your publication in MS Word, first compile it to HTML
 ```bash
 $ make html
 ```
@@ -144,5 +145,5 @@ $ make latexclean
 
 ## Contributing
 
-Feel free to fork and use for other papers. If you make any improvements, please submit a pull request to contribute upstream. Bugs can be filed in GitHub issues.
+Feel free to fork and use for other papers. If you end up making any improvements, please email [me@raymondcheng.net](mailto:me@raymondcheng.net) to submit changes upstream. Thanks!
 

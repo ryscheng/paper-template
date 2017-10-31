@@ -1,6 +1,7 @@
 # Commands
 latex = pdflatex
 bibtex = bibtex
+latexmk = latexmk
 htlatex = htlatex
 chktex = chktex
 
@@ -13,7 +14,7 @@ export TEXINPUTS:=.:./style:${TEXINPUTS}
 
 #########################################
 all:
-	./latexmk.pl -bibtex -pdf $(papers)
+	$(latexmk) -bibtex -pdf $(papers)
 
 complete: once bib
 	$(latex) $(papers)
@@ -34,7 +35,7 @@ clean:
 	git clean -xdf
 
 latexclean:
-	./latexmk.pl -c
+	$(latexmk) -c
 
 serve:
 	python -m SimpleHTTPServer
