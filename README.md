@@ -121,7 +121,7 @@ As much as we all hate to admit it, MS Word is still the best grammar and spellc
 $ make html
 ```
 
-Then open MS Word with the generated HTML document and run spell check. You'll have to translate all the changes back into your original `.tex` files. 
+Then open MS Word with the generated HTML document and run spell check. You'll have to manually translate all the changes back into your original `.tex` files. 
 
 You can also view the HTML file in a browser by running the following and navigating to `http://localhost:8000`.
 ```bash
@@ -132,14 +132,14 @@ See the following section to cleanup all the intermediate files generated.
 
 ### Clean
 
-To cleanup intermediate files from LaTeX
-```bash
-$ make latexclean
-```
-
 To delete all files that are not version controlled (e.g. as specified by `.gitignore`)
 ```bash
 $ make clean
+```
+
+To only cleanup intermediate files from LaTeX
+```bash
+$ make latexclean
 ```
 
 ## Contributing
