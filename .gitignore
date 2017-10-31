@@ -10,6 +10,18 @@
 *.fdb_latexmk
 *.fls
 
+# HTLaTeX
+*.html
+*.css
+*.png
+*.xref
+*.dvi
+*.idv
+*.lg
+*.tmp
+*.4ct
+*.4tc
+
 # MacOS
 .DS_Store
 *~
