@@ -6,8 +6,8 @@
 %%% left, before, after
 %\titlespacing*{\section}{0pt}{3pt}{0pt}
 %\titlespacing*{\subsection}{0pt}{2pt}{0pt}
-\setlength{\textfloatsep}{0.08in}
-\setlength{\floatsep}{0.06in}
+\textfloatsep 0.08in
+\floatsep 0.06in
 %%% PATCH TO FIX NUMBERING (titlesec bug removes numbering)
 % https://tex.stackexchange.com/questions/299969/titlesec-loss-of-section-numbering-with-the-new-update-2016-03-15
 %\usepackage{etoolbox}
@@ -80,11 +80,11 @@
   captionpos=b,                   % sets the caption-position to bottom
   breaklines=true,                % sets automatic line breaking
   breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
-  escapeinside={\%*}{*},         % if you want to add a comment within your code
+  escapeinside={\%*}{*)},         % if you want to add a comment within your code
   commentstyle=\color{green},
   keywordstyle=\color{blue}\bfseries,
-  stringstyle=\color{red}}
-
+  stringstyle=\color{red}
+}
 \lstdefinelanguage{javascript}{
   keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
   keywordstyle=\color{blue}\bfseries,
@@ -97,7 +97,7 @@
   commentstyle=\color{purple}\ttfamily,
   stringstyle=\color{red}\ttfamily,
   morestring=[b]',
-  morestring=[b]''
+  morestring=[b]"
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -105,12 +105,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\squishlist}{\begin{itemize}[itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt,leftmargin=1em,labelwidth=1em,labelsep=0.5em]}
 \newcommand{\squishlistend}{\end{itemize}}
-\newcommand{\squish}{\begin{itemize}[itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt,leftmargin=1em,labelwidth=1em,labelsep=0.5em]}
 \newcommand{\squishend}{\end{itemize}}
 \newcommand{\squishenum}{\begin{enumerate}[itemsep=0.5pt,parsep=0pt,topsep=0pt,partopsep=0pt,leftmargin=1.5em,labelwidth=1em,labelsep=0.5em]{}}
 \newcommand{\squishenumend}{\end{enumerate}}
 
-\newcommand{\todo}[1]{[[[{\bf{TODO:\@#1}}]]]}
+\newcommand{\todo}[1]{[[[{\bf{TODO: #1}}]]]}
 \newcommand\myurl[2]{\url{#1}}
 
 \renewcommand{\floatpagefraction}{0.95}
@@ -119,11 +118,11 @@
 \makeatletter  % Allow the use of @ in command names
 \long\def\@makecaption#1#2{%
   \vskip 0.1in
-  \sbox\@tempboxa{{\captionfonts{} #1: #2}}%
-  \ifdim{} \wd\@tempboxa{} >\hsize
-    {\captionfonts{} #1: #2\par}
+  \sbox\@tempboxa{{\captionfonts #1: #2}}%
+  \ifdim \wd\@tempboxa >\hsize
+    {\captionfonts #1: #2\par}
   \else
-    \hbox{} to\hsize{\hfil\box\@tempboxa\hfil}%
+    \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
   \fi
   \vskip 0in}
 \makeatother   % Cancel the effect of \makeatletter
@@ -131,3 +130,6 @@
 % Theorems
 \newtheorem{mydefinition}{Definition}
 \newtheorem{mytheorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+
