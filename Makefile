@@ -16,7 +16,7 @@ export TEXINPUTS:=.:./style:${TEXINPUTS}
 all:
 	$(latexmk) -bibtex -pdf $(papers)
 
-complete: once bib
+complete: pdf bib
 	$(latex) $(papers)
 
 pdf:
