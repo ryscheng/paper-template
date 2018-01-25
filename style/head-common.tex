@@ -58,6 +58,8 @@
 \usepackage{algpseudocode}
 \usepackage{multirow}
 \usepackage{xspace}
+\usepackage[usenames,dvipsnames]{xcolor}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% SETTINGS
@@ -109,7 +111,8 @@
 \newcommand{\squishenum}{\begin{enumerate}[itemsep=0.5pt,parsep=0pt,topsep=0pt,partopsep=0pt,leftmargin=1.5em,labelwidth=1em,labelsep=0.5em]{}}
 \newcommand{\squishenumend}{\end{enumerate}}
 
-\newcommand{\todo}[1]{[[[{\bf{TODO: #1}}]]]}
+\newcommand{\todo}[1]{\textsf{\color{red}{[{TODO: #1}]}}}
+%\newcommand{\todo}[1]{[[[{\bf{TODO: #1}}]]]}
 \newcommand\myurl[2]{\url{#1}}
 
 \renewcommand{\floatpagefraction}{0.95}
