@@ -2,12 +2,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% SPACE SAVERS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[small,compact]{titlesec}
+%\usepackage[small,compact]{titlesec}
 %%% left, before, after
 %\titlespacing*{\section}{0pt}{3pt}{0pt}
 %\titlespacing*{\subsection}{0pt}{2pt}{0pt}
-\textfloatsep 0.08in
-\floatsep 0.06in
+%\textfloatsep 0.08in
+%\floatsep 0.06in
+
 %%% PATCH TO FIX NUMBERING (titlesec bug removes numbering)
 % https://tex.stackexchange.com/questions/299969/titlesec-loss-of-section-numbering-with-the-new-update-2016-03-15
 %\usepackage{etoolbox}
@@ -15,6 +16,7 @@
 %\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
 %\patchcmd{\ttlh@hang}{\noindent}{}{}{}
 %\makeatother
+
 %%% AMSMATH (align*) SPACING
 %\expandafter\def\expandafter\normalsize\expandafter{%
 %  \normalsize
@@ -27,17 +29,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% PACKAGES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{array}
-\usepackage{fancyhdr}
-\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{boxedminipage}
 \usepackage{calrsfs}
-\usepackage{pifont}
-\usepackage{verbatim}
-\usepackage{url}
+\usepackage{caption}
+\usepackage[capitalize]{cleveref}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{graphicx}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=false,
@@ -45,21 +53,20 @@
     %pdftitle={Blocking-Resistant Network Services using \systemname},
     %pdfsubject={Network security and privacy; Peer-to-peer, overlay, and content distribution networks},
 }
-\usepackage{graphicx}
-\usepackage{caption}
-\usepackage{subcaption}
-\usepackage{sidecap}
-\usepackage{float}
-\usepackage[section]{placeins}
-\usepackage{enumitem}
-\usepackage{color}
+\usepackage[utf8x]{inputenc}
 \usepackage{listings}
-\usepackage{algorithm}
-\usepackage{algpseudocode}
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
 \usepackage{multirow}
-\usepackage{xspace}
+\usepackage{nicefrac}
+\usepackage{pifont}
+\usepackage[section]{placeins}
+\usepackage{sidecap}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{verbatim}
 \usepackage[usenames,dvipsnames]{xcolor}
-
+\usepackage{xspace}
+\usepackage[ff,sets,adversary,keys,primitives,operators,lambda,logic,notions]{style/cryptocode}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% SETTINGS
