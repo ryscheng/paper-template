@@ -1,0 +1,15 @@
+
+%%% Comments
+\newif\ifshowcomment
+\showcommenttrue
+%\showcommentfalse
+
+\ifshowcomment
+\newcommand{\todo}[1]{\textsf{\color{red}{[{TODO: #1}]}}}
+\newcommand{\ray}[1]{\textsf{\color{orange}{[Ray: {#1}]}}}
+\else
+\newcommand{\todo}[1]{}
+\newcommand{\ray}[1]{}
+\fi
+
+
