@@ -31,10 +31,10 @@ lint:
 html:
 	$(htlatex) $(papers)
 
-clean:
+deepclean:
 	git clean -xdf
 
-latexclean:
+clean:
 	$(latexmk) -c
 
 serve:
